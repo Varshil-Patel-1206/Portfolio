@@ -1,0 +1,311 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #172226;
+  --ink-soft: #526267;
+  --paper: #f5f1e8;
+  --paper-deep: #ebe4d5;
+  --line: rgba(23, 34, 38, 0.16);
+  --coral: #f05d45;
+  --lime: #d9f36b;
+  --blue: #a8d9e7;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--paper);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 8% 8%, rgba(240, 93, 69, 0.13), transparent 24rem),
+    radial-gradient(circle at 92% 34%, rgba(168, 217, 231, 0.2), transparent 28rem),
+    var(--paper);
+  font-family: "Avenir Next", "Trebuchet MS", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  color: var(--ink);
+  background: var(--lime);
+}
+
+a {
+  text-underline-offset: 4px;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.site-shell {
+  min-height: 100vh;
+  overflow: hidden;
+  background: transparent !important;
+}
+
+.site-shell section {
+  position: relative;
+}
+
+.site-shell section::before {
+  position: absolute;
+  top: 0;
+  left: max(1.5rem, calc((100vw - 80rem) / 2));
+  right: max(1.5rem, calc((100vw - 80rem) / 2));
+  height: 1px;
+  content: "";
+  background: var(--line);
+}
+
+.site-shell h1,
+.site-shell h2,
+.site-shell h3 {
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  letter-spacing: -0.045em;
+}
+
+.site-shell p {
+  color: var(--ink-soft);
+}
+
+.site-shell .text-gray-500,
+.site-shell .text-gray-600,
+.site-shell .text-gray-400 {
+  color: var(--ink-soft) !important;
+}
+
+.site-shell .border-gray-200,
+.site-shell .border-gray-100 {
+  border-color: var(--line) !important;
+}
+
+.site-shell .bg-gray-50 {
+  background: rgba(235, 228, 213, 0.58) !important;
+}
+
+.site-shell .bg-gray-100 {
+  background: var(--paper-deep) !important;
+}
+
+.site-shell .rounded-2xl {
+  border-radius: 0.35rem;
+}
+
+.site-shell .rounded-full {
+  border-radius: 999px;
+}
+
+.site-shell .bg-black {
+  background: var(--ink) !important;
+}
+
+.site-shell .hover\:bg-gray-800:hover {
+  background: var(--coral) !important;
+}
+
+.site-shell .hover\:text-black:hover {
+  color: var(--coral) !important;
+}
+
+.admin-shell {
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 85% 0%, rgba(168, 217, 231, 0.32), transparent 24rem),
+    var(--paper) !important;
+  font-family: "Avenir Next", "Trebuchet MS", sans-serif;
+}
+
+.admin-sidebar {
+  flex-shrink: 0;
+  background: var(--ink) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.admin-mark {
+  display: inline-flex;
+  width: 2rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  color: var(--ink);
+  background: var(--lime);
+  font-size: 0.72rem;
+  letter-spacing: 0;
+}
+
+.admin-shell aside p {
+  color: rgba(255, 255, 255, 0.55) !important;
+}
+
+.admin-shell aside a {
+  color: rgba(255, 255, 255, 0.64);
+  border: 1px solid transparent;
+}
+
+.admin-shell aside a:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.admin-shell aside a.bg-white {
+  color: var(--ink) !important;
+  background: var(--lime) !important;
+  border-color: var(--lime);
+}
+
+.admin-shell > div {
+  background: transparent;
+}
+
+.admin-shell header {
+  border-color: var(--line) !important;
+  background: rgba(245, 241, 232, 0.84) !important;
+  backdrop-filter: blur(16px);
+}
+
+.admin-shell main {
+  min-height: calc(100vh - 5rem);
+}
+
+.admin-shell main h1,
+.admin-shell main h2,
+.admin-shell main h3 {
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.admin-shell main p,
+.admin-shell main label {
+  color: var(--ink-soft);
+}
+
+.admin-shell main > div > div[class*="bg-white"],
+.admin-stat,
+.admin-message-card {
+  border-color: var(--line) !important;
+  border-radius: 0.45rem !important;
+  box-shadow: 0 16px 40px rgba(23, 34, 38, 0.05);
+}
+
+.admin-stat {
+  position: relative;
+  overflow: hidden;
+}
+
+.admin-stat::after {
+  position: absolute;
+  right: -1.4rem;
+  bottom: -1.8rem;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 999px;
+  content: "";
+  background: rgba(240, 93, 69, 0.16);
+}
+
+.admin-stat:nth-child(3n)::after {
+  background: rgba(168, 217, 231, 0.34);
+}
+
+.admin-stat:nth-child(3n + 1)::after {
+  background: rgba(217, 243, 107, 0.5);
+}
+
+.admin-primary,
+.admin-logout {
+  background: var(--ink) !important;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.admin-primary:hover,
+.admin-logout:hover {
+  background: var(--coral) !important;
+  transform: translateY(-1px);
+}
+
+.admin-input {
+  border-color: var(--line) !important;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.admin-input:focus {
+  border-color: var(--coral) !important;
+  box-shadow: 0 0 0 3px rgba(240, 93, 69, 0.14);
+}
+
+.admin-login {
+  background:
+    radial-gradient(circle at 16% 12%, rgba(240, 93, 69, 0.22), transparent 22rem),
+    radial-gradient(circle at 84% 88%, rgba(168, 217, 231, 0.35), transparent 26rem),
+    var(--paper) !important;
+}
+
+.admin-login-card {
+  border: 1px solid var(--line);
+  border-radius: 0.45rem !important;
+  box-shadow: 0 24px 80px rgba(23, 34, 38, 0.12) !important;
+}
+
+.admin-eyebrow {
+  color: var(--coral) !important;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+@media (max-width: 768px) {
+  .admin-shell {
+    display: block;
+  }
+
+  .admin-sidebar {
+    min-height: auto;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .admin-sidebar nav {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding-bottom: 0.25rem;
+  }
+
+  .admin-sidebar nav a {
+    flex: 0 0 auto;
+    padding: 0.65rem 0.8rem;
+    white-space: nowrap;
+  }
+
+  .admin-sidebar .mb-10 {
+    margin-bottom: 1rem;
+  }
+
+  .admin-shell header {
+    height: auto;
+    min-height: 4.5rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .admin-shell main {
+    padding: 1.25rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-shell section::before {
+    left: 1.5rem;
+    right: 1.5rem;
+  }
+}

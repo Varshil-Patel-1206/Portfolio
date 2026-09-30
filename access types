@@ -1,0 +1,25 @@
+PUBLIC
+│
+├── GET  /api/projects
+├── GET  /api/skills
+├── GET  /api/services
+├── GET  /api/experience
+├── GET  /api/education
+├── GET  /api/certifications
+├── GET  /api/gallery
+└── POST /api/messages
+     
+ADMIN + JWT
+│
+├── POST /api/projects
+├── PUT  /api/projects/:id
+├── DELETE /api/projects/:id
+│
+├── POST/PUT/DELETE /api/skills
+├── POST/PUT/DELETE /api/services
+├── POST/PUT/DELETE /api/experience
+├── POST/PUT/DELETE /api/education
+├── POST/PUT/DELETE /api/certifications
+├── POST/PUT/DELETE /api/gallery
+│
+└── GET/GET/:id/PATCH/DELETE /api/messages
